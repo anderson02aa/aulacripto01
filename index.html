@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia - Página de Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            font-family: "Sofia", sans-serif;
+            padding: 10px;
+        }
+        h2, h3, h4{
+            font-family: "Oswald", sans-serif;
+        }
+        .centr{
+            margin-top: -10px;
+        }
+        #ctds-img{
+            justify-content: center;
+            flex-direction: column;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        a{
+            width: min-content;
+            height: min-content;
+            text-decoration: none;
+        }
+        footer{
+            display: block;
+            height: 100%;
+        }
+        @media only screen and (max-width: 1000px) {
+        /* For mobile phones: */
+        .titu{
+            width: 90vw;
+        }
+        #ctds-img{
+            flex-direction: column;
+            width: 100vw;
+            
+        }
+        #div_dir{
+            width: 100%;
+            
+        }
+        header{
+            width: 100vw;
+        }
+        #contra_cab{
+            width: 100vw;
+            display: block;
+        }
+        .cards{
+            width: 25vw;
+        }
+        #div_lef{
+            display: block;
+            width: 100vw;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo_txt">
+            <h1>CRIPTOGRAFIA</h1>
+        </div>
+    </header>
+    <div id="contra_cab">
+        <h2 style="margin-left: 17px; font-size: 19pt;">SISFAPERJ</h2>
+    </div>
+    <main>
+        <div id="div_lef">
+            <div class="titu">
+                <h3 style="text-align: center; font-size: 18pt;">EXPOSIÇÃO DE CONTEÚDOS</h3>
+            </div>
+           <a href="transposicao/transposicao.html">
+                    <div class="cards">
+                        <h4>Transposição</h4>
+                    </div>
+           </a>
+            </a>
+            <a href="substituicao/substituicao.html">
+                <div class="cards">
+                    <h4>Substituição</h4>
+                </div>
+            </a>
+            <a href="hash/hash.html">
+                <div class="cards">
+                    <h4>HASH</h4>
+                </div>
+            </a>
+            <a href="simetrica/simetrica.html">
+                <div class="cards">
+                    <h4>Simétrica</h4>
+                </div>
+            </a>
+            <a href="assimetrica/assimetrica.html">
+                <div class="cards">
+                    <h4 class="centr">Assimétrica</h4>
+                </div>
+            </a>
+            <a href="">
+                <div class="cards">
+                    <h4 class="centr"> Implementação Futura: <br> Esteganografia</h4>
+                </div>
+            </a>
+        </div>
+        <div id="div_dir">
+            <div class="titu2">
+                <h2>Informações</h2>
+                <p>Criptografia é a arte de escrever em códigos ou cifras</p>
+            </div>
+            <div style="text-align: center;" id="ctds-img">
+                <div>
+                    <img src="img/criptografia-img.jpg" alt="" height="167" style="margin-right: -4px;">
+                    <img src="img/foto-ilustracao-computador.jpg" alt="">
+                </div>
+                    <div style="margin-top: -24px;">
+                        <img src="img/img-cripto.jpg" alt="" height="231">
+                    </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p style="text-align: center; font-size: 15pt;">© 2021-2022. Instituto Federal do Rio de Janeiro, Campus Arraial do Cabo e FAPERJ. Todos os direitos reservados.</p>
+        <div class="logo_img"> <img src="logo gov.png" alt="Logo Governo do Rio de Janeiro"> <img src="img/logofaperj.jpg" alt="Logo da Faperj"><img src="img/logoifrj.png" alt="" style="margin-left: 10px;"> <img src="logo jt.png" alt="Logo Jovens Talentos"> <img src="logo secti.jpg" alt="Logo SECTI"></div>
+    </footer>
+</body>
+</html>

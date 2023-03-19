@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra Cesar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+section{
+    margin: auto;
+    margin-top: 30px;
+    width: 950px;
+    height: 300px;
+    background-color: white;
+    color:black;
+    border-radius: 20px;
+    position: relative;
+}
+.atencao{
+    margin: auto;
+    margin-top: 30px;
+    width: 950px;
+    height: 100px;
+    background-color: white;
+    color:black;
+    border-radius: 2px;
+    position: relative;
+}
+div{
+    display: inline-block;
+    position: relative;
+    margin-left: 95px;
+}
+body{
+    background-color: black;
+    color: white;
+}
+#lblbtn{
+    width: 100px;
+    height: 50px;
+}
+    </style>
+</head>
+<body>
+    <hr>
+    <h1 style="text-align: center;">CIFRA CESAR</h1>
+    <hr>
+    <section class="atencao">
+        <h2 style="text-align: center;">ATENÇÃO</h2>
+        <p style="text-align: center;">Atenção! O alfabeto disponível se encontra entre (ABCDEFGHIJKLMNOPQRSTUVWXYZ) e (abcdefghijklmnoprstuvwxyz) qualquer caractere fora esses serão desconsiderados.</p>
+    </section>
+    <h2 style="text-align: center;">Codificar</h2>
+    <section>
+        <div> 
+            <h2 style="margin-bottom: 30px; margin-left: 60px;">Digite aqui</h2>
+            <textarea name="texto" id="txt1" cols="30" rows="10" style="resize: none;" onkeyup="cifrar()"></textarea>
+        </div>
+        <div class="rot">
+            <h2 style="margin-left: 9px;">Rotação</h2>
+            <button onclick="diminuir()" style="margin-left: 17px;">-</button>
+            <b><span style="font-size: larger;" id="valor">3</span></b>
+            <button onclick="somar()">+</button>
+            <p></p>
+           <input type="button" value="Cifrar" id="lblbtn" style="border-radius: 24px;" onclick="cifrar()">
+        </div>
+        <div>
+            <h2 style="margin-bottom: 30px; margin-left: 60px;">Resultado</h2>
+            <textarea name="" id="txt2" cols="30" rows="10" style="resize: none;"></textarea>
+        </div>
+    </section>
+    <h2 style="text-align: center;">Decodificar</h2>
+    <section>
+        <div> 
+            <h2 style="margin-bottom: 30px; margin-left: 60px;">Digite aqui</h2>
+            <textarea name="texto" id="txt11" cols="30" rows="10" style="resize: none;" onkeyup="decifrar()"></textarea>
+        </div>
+        <div class="rot">
+            <h2 style="margin-left: 9px;">Rotação</h2>
+            <button onclick="diminuir1()" style="margin-left: 17px;">-</button>
+            <b><span style="font-size: larger;" id="valor_decodificar">3</span></b>
+            <button onclick="somar1()">+</button>
+            <p></p>
+           <input type="button" value="Decifrar" id="lblbtn" style="border-radius: 24px;" onclick="decifrar()">
+        </div>
+        <div>
+            <h2 style="margin-bottom: 30px; margin-left: 60px;">Resultado</h2>
+            <textarea name="" id="txt3" cols="30" rows="10" style="resize: none;"></textarea>
+        </div>
+    </section>
+    <footer style="text-align: center;"><p>@RubemCorrêa</p></footer>
+    <script> 
+            var rotn =+ document.getElementById("valor").innerHTML;
+            var rotn1 =+ document.getElementById("valor_decodificar").innerHTML;
+            function somar(){
+                if (rotn<100){
+                    rotn ++;
+                    document.getElementById("valor").innerHTML = rotn;
+                    cifrar();
+                }
+            }
+            function diminuir(){
+                if (rotn>1){
+                    rotn --;
+                    document.getElementById("valor").innerHTML = rotn;
+                    cifrar();
+                }
+            }
+            function somar1(){
+                if (rotn1<100){
+                    rotn1 ++;
+                    document.getElementById("valor_decodificar").innerHTML = rotn1;
+                    decifrar();
+                }
+            }
+            function diminuir1(){
+                if (rotn1>1){
+                    rotn1 --;
+                    document.getElementById("valor_decodificar").innerHTML = rotn1;
+                    decifrar();
+                }
+            }
+            function decifrar(){ 
+                var input = document.getElementById("txt11").value;
+                var result = "";
+                var rotn1_doc = rotn1%26;
+                for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+                    if (input.charCodeAt(i) == 32){ // Verificar e incrementar os espaços
+                        result += " "; 
+                    } 
+                    
+                    else if (input.charCodeAt(i)>= 65 && input.charCodeAt(i)<=90){  // Verificar se as letras sao maiusculas
+                        if ( (input.charCodeAt(i)-rotn1_doc) < 65){ // Acontecerah um giro se o numero passar do A 
+                            result += String.fromCharCode(((input.charCodeAt(i)-rotn1_doc+26))); 
+                        } else{result += String.fromCharCode(input.charCodeAt(i)-rotn1_doc);} // Subtracao normal, caso nao ocorra nenhum giro
+                    }
+                    else if (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122){//Verificar se as letras sao minusculas
+                        if ((input.charCodeAt(i)-rotn1_doc)<97){ //Acontecera um giro se passar do a
+                            result += String.fromCharCode((input.charCodeAt(i)-rotn1_doc+26)); 
+                        }else{result += String.fromCharCode(input.charCodeAt(i)-rotn1_doc); } // Soma normal, caso nao haja necessidade de giro
+                    }
+                    else{
+                        result += String.fromCharCode(input.charCodeAt(i));
+                    } 
+            
+    
+                }
+
+                document.getElementById("txt3").innerHTML = result;
+            }
+            function cifrar(){
+                var input = document.getElementById("txt1").value;
+                var result = "";
+                var rotn_doc = rotn%26;
+                for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+                    if (input.charCodeAt(i) == 32){ // Verificar e incrementar os espaços
+                        result += " ";
+                    }
+                    else if (input.charCodeAt(i)>= 65 && input.charCodeAt(i)<=90){ // Verificar se as letras sao maiusculas
+                        if ( (input.charCodeAt(i)+rotn_doc) > 90){ // Acontecerah um giro se o numero passar do Z 
+                            result += String.fromCharCode(((input.charCodeAt(i)+rotn_doc)%90)+64); 
+                        } else{result += String.fromCharCode(input.charCodeAt(i)+rotn_doc);} // Soma normal, caso nao ocorra nenhum giro
+                    }
+                    else if (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122){ //Verificar se as letras sao minusculas
+                        if ((input.charCodeAt(i)+rotn_doc)>122){ //Acontecera um giro se passar do z
+                            result += String.fromCharCode((input.charCodeAt(i)+rotn_doc)%122+96); 
+                        }else{result += String.fromCharCode(input.charCodeAt(i)+rotn_doc); } // Soma normal, caso nao haja necessidade de giro
+                    }
+                    else{
+                        result += String.fromCharCode(input.charCodeAt(i));
+                    } 
+            
+    
+                }
+
+                document.getElementById("txt2").innerHTML = result;
+            }
+    </script>
+</body>
+</html>

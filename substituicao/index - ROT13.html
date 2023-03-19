@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra ROT13</title>
+    <style>
+        body{
+            background-color: rgb(89, 9, 9);
+            color: black;
+        }
+        div{
+            display: inline-block;
+            padding: 5px;
+            margin-left: 75px;
+            
+        }
+        section{
+            background-color: white;
+            width: 950px;
+            height: 300px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 18px;
+            margin-top: 12px;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border-radius: 18px;
+        }
+        .atencao{
+            background-color: white;
+            width: 950px;
+            height: 50px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: rgb(170, 168, 168);">ROT13</h1>  
+    <section class="atencao">
+        <h3 style="text-align: center;">Atenção! O alfabeto disponível nessa cifra encontra-se entre (ABCDEFGHIJKLMNOPQRSTUVWXYZ) e (abcdefghijklmnoprstuvwxyz). Qualquer caractere fora esses serão desconsiderados.</h3>
+    </section>  
+    <section>
+        <div>
+            <h2>Escreva aqui</h2>
+            <textarea name="" id="txt1" cols="30" rows="10" style="resize: none;" onkeyup="codificar()"></textarea>
+       </div>
+       <div>
+           <button onclick="codificar()">Codificar</button>
+       </div>
+       <div>
+           <h2>Resultado</h2>
+           <textarea name="" id="txt2" cols="30" rows="10" style="resize: none;"></textarea>
+       </div>
+    </section>
+    <section>
+        <div>
+            <h2>Escreva aqui</h2>
+            <textarea name="" id="txt3" cols="30" rows="10" style="resize: none;" onkeyup="decodificar()"></textarea>
+       </div>
+       <div>
+           <button onclick="decodificar()">Decodificar</button>
+       </div>
+       <div>
+           <h2>Resultado</h2>
+           <textarea name="" id="txt4" cols="30" rows="10" style="resize: none;"></textarea>
+       </div>
+    </section>
+    <footer>
+        <p style="text-align: center; color: white;">@RubemCorrêa</p>
+    </footer>
+    <script>
+         function codificar(){
+                var input = document.getElementById("txt1").value;
+                var result = "";
+
+                for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+                    if (input.charCodeAt(i) == 32){ // Verificar e incrementar os espaços
+                        result += " ";
+                    }
+                    else if (input.charCodeAt(i)>= 65 && input.charCodeAt(i)<=90){ // Verificar se as letras sao maiusculas
+                        if ( (input.charCodeAt(i)+13) > 90){ // Acontecerah um giro se o numero passar do Z 
+                            result += String.fromCharCode(((input.charCodeAt(i)+13)%90)+64); 
+                        } else{result += String.fromCharCode(input.charCodeAt(i)+13);} // Soma normal, caso nao ocorra nenhum giro
+                    }
+                    else if (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122){ //Verificar se as letras sao minusculas
+                        if ((input.charCodeAt(i)+13)>122){ //Acontecera um giro se passar do z
+                            result += String.fromCharCode((input.charCodeAt(i)+13)%122+96); 
+                        }else{result += String.fromCharCode(input.charCodeAt(i)+13); } // Soma normal, caso nao haja necessidade de giro
+                    }
+                    else{
+                        result += String.fromCharCode(input.charCodeAt(i));
+                    } 
+            
+    
+                }
+
+                document.getElementById("txt2").innerHTML = result;
+            }
+            function decodificar(){ 
+                var input = document.getElementById("txt3").value;
+                var result = "";
+
+                for(var i = 0; i<input.length; i++){ //Passa por cada caracter do input
+                    if (input.charCodeAt(i) == 32){ // Verificar e incrementar os espaços
+                        result += " "; 
+                    } 
+                    
+                    else if (input.charCodeAt(i)>= 65 && input.charCodeAt(i)<=90){  // Verificar se as letras sao maiusculas
+                        if ( (input.charCodeAt(i)-13) < 65){ // Acontecerah um giro se o numero passar do A 
+                            result += String.fromCharCode(((input.charCodeAt(i)-13+26))); 
+                        } else{result += String.fromCharCode(input.charCodeAt(i)-13);} // Subtracao normal, caso nao ocorra nenhum giro
+                    }
+                    else if (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122){//Verificar se as letras sao minusculas
+                        if ((input.charCodeAt(i)-13)<97){ //Acontecera um giro se passar do a
+                            result += String.fromCharCode((input.charCodeAt(i)-13+26)); 
+                        }else{result += String.fromCharCode(input.charCodeAt(i)-13); } // Soma normal, caso nao haja necessidade de giro
+                    }
+                    else{
+                        result += String.fromCharCode(input.charCodeAt(i));
+                    } 
+            
+    
+                }
+
+                document.getElementById("txt4").innerHTML = result;
+            }    
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia HASH</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- Principal CSS do Bootstrap -->
+    <link href="./Bootstrap._files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+    <link href="./Bootstrap._files/cover.css" rel="stylesheet">
+</head>
+<body>
+  <body class="text-center" cz-shortcut-listen="true">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">HASH</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="../index.html">Home</a>
+            <a class="nav-link" href="#" onclick="ativarDivInfo()">Informações</a>
+            <a class="nav-link" href="#" onclick="ativarDivCripto()">Criptografia</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <section id="conteudo-principal">
+        <h1 class="cover-heading">O que é a cifra de hash?</h1>
+        <p class="lead">Uma função de dispersão criptográfica ou função hash criptográfica é uma função hash considerada praticamente impossível de inverter, isto é, de recriar o valor de entrada utilizando somente o valor de dispersão. Essas funções hash unidirecionais têm sido chamadas de "os operários da criptografia moderna".[1] Os dados de entrada costumam ser chamados de mensagem, e o valor de dispersão mensagem resumida ou simplesmente resumo.</p>
+        <p class="lead">
+          <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash_criptogr%C3%A1fica" class="btn btn-lg btn-secondary" target="_external">Saiba mais</a>
+        </p>
+    </section>
+        <div id="txt">
+            <div></div>
+            <div>
+                <textarea class="txts" rows="15" id="entrada" placeholder="Digite o texto aqui" autofocus="true" required></textarea>
+            </div>
+            <div>
+                <textarea class="txts" rows="15" id="saida" placeholder="Saída Criptografada" disabled></textarea>
+            </div>
+            <div></div>
+        </div>
+      </main>
+      
+      <div id="botoes">
+        <button onclick="encriptar()" class="btns">criptografar</button>
+        <button onclick="limpeza()" class="btns">Limpar</button>
+    </div>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>© 2021-2022. Instituto Federal do Rio de Janeiro, Campus Arraial do Cabo e FAPERJ. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    <script src="./Template de capa, usando Bootstrap._files/jquery-3.3.1.slim.min.js.transferir" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./Template de capa, usando Bootstrap._files/popper.min.js.transferir"></script>
+    <script src="./Template de capa, usando Bootstrap._files/bootstrap.min.js.transferir"></script>
+  
+
+<div style="display: none" class="ubey-RecordingScreen-count-down ubey-RecordingScreen-count-down-container">
+    <style>
+        .ubey-RecordingScreen-count-down-container {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 9999999999999;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .ubey-RecordingScreen-count-down-content {
+            position: absolute;
+            display: flex;
+            top: 50%;
+            left: 50%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 15em;
+            width: 15em;
+            transform: translate(-50%, -100%);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+        }
+
+        #ubey-RecordingScreen-count-count {
+            font-size: 14em;
+            transform: translateY(-2%);
+        }
+    </style>
+    <div class="ubey-RecordingScreen-count-down-content">
+        <span id="ubey-RecordingScreen-count-count"></span>
+    </div>
+</div><div id="gtx-trans" style="position: absolute; left: 997px; top: 52px;"><div class="gtx-trans-icon"></div></div></body></html>
+
+    <script src="md5.min.js">
+        
+
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

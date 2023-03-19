@@ -1,0 +1,41 @@
+#txt {
+    display: none;
+    grid-template-columns:1fr 23fr 23fr 1fr;
+    text-align: center;
+    margin-top: 30px;
+}
+.txts {
+    width: 90%;
+    height: 100%;
+    margin-bottom: 30px;
+    resize: none;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    background-position: right;
+    border-radius: 5px;
+}
+
+#botoes{
+    text-align: center;  
+    margin-bottom: 40px;
+    display: none;
+}
+.btns { 
+    background-color: #576867;
+    border: none;
+    color: white;
+    padding: 10px 29px;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;  
+    margin-top: 20px;
+    min-width: 40%;
+    margin-bottom: 20px;
+}
+.btns:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

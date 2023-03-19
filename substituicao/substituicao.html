@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituição</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            font-family: "Sofia", sans-serif;
+            text-transform: capitalize;
+        }
+        h2{
+            font-family: "Oswald", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header id="cabecalho">
+        <section>
+            <div style="text-align: center; font-family: cursive; font-size: 24px;">
+                <h1>Su<span style="color: blueviolet;">b</span><span style="color: brown;">s</span>titui<span style="color: brown;">ç</span>ão</h1>
+            </div>
+        </section>
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="#" class="tip1" onclick="alterarDiv()" >INFO</a></li>
+                    <li><a href="#" class="tip2"  onclick="alterarDiv2()">CIFRAS</a></li>
+                    <li><a href="../index.html" class="tip3" onclick="alterarDiv3()">HOME</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="divInfo" style="background-color: rgb(172, 153, 153);">
+        <div>
+            <h2 style="border-bottom: 1px solid white; padding: 5px;">Como funciona o método de Criptografia por Substituição?</h2>
+            <img src="Anagrama.png" style="margin-top: 40px; padding: 40px; height: 40%; border-radius: 4px;" alt="">
+        </div>
+        <div style="background:maroon;">
+            <div style="align-items: center;">
+                <p style="width: 400px;">
+                    Em criptografia, uma cifra de substituição é um método de criptografia que opera de acordo com um sistema pré-definido de substituição. Para criptografar uma mensagem, unidades do texto - que podem ser letras isoladas, pares ou outros grupos de letras - são substituídas para formar a cifra. Uma substituição simples pode ser expressa escrevendo o alfabeto numa ordem diferente, que se designa alfabeto de substituição. Pode ser deslocado de um passo fixo (como na cifra ROT13, exemplo de uma cifra de César) ou baralhado de forma mais complexa.
+                </p>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div id="divCifras">
+
+        <div id="div_maeCifra">
+            <div class="titu">
+                <h3 style="text-align: center; font-size: 34pt;"> EXPOSIÇÃO DE CONTEÚDOS</h3>
+            </div>
+            <div>
+                <a href="Cifras Substituição.zip" id="download">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        
+                    </svg>
+                    Baixar Tudo
+                </a>
+            </div>
+            <div id="container">
+                <a href="CifraCesar_Modificado.html">
+                    <div class="cards"> 
+                        <h4>CIFRA DE CÉSAR</h4>
+                    </div>
+                </a>
+                <a href="index - ROT13.html">
+                    <div class="cards">
+                        <h4>ROT13</h4>
+                    </div>
+                </a>
+                <a href="index - ZENIT POLAR.html">
+                    <div class="cards">
+                        <h4>ZENIT POLAR</h4>
+                    </div>
+                </a>
+                <a href="CifrasHebraicas.html">
+                    <div class="cards">
+                        <h4>HEBRAICAS</h4>
+                    </div>
+                </a>
+                <a href="CifraMaçonica/index.html">
+                    <div class="cards">
+                        <h4>MAÇONICA</h4>
+                    </div>
+                </a>
+                <a href="KamaSutra/KamaSutra.html">
+                    <div class="cards">
+                        <h4>KAMA SUTRA</h4>
+                    </div>
+                </a>
+                
+                <a href="Cifra Playfair/Playfair-Cipher-master/playfair.html">
+                    <div class="cards">
+                        <h4>PLAYFAIR</h4>
+                    </div>
+                </a>
+                
+        </div>
+        </div>
+
+    </div>
+    <script>
+        function alterarDiv(){
+            document.getElementById('divCifras').style.display = "none";
+            document.getElementById('divInfo').style.display = "flex";
+            document.querySelector('.tip1').style.color = "black";
+            document.querySelector('.tip2').style.color = "rgba(128, 128, 128, 0.192)";
+            document.querySelector('.tip3').style.color = "rgba(128, 128, 128, 0.192)";
+        }
+        function alterarDiv2(){
+            document.getElementById('divCifras').style.display = "flex";
+            document.getElementById('divInfo').style.display = "none";
+
+            document.querySelector('.tip2').style.color = "black";
+            document.querySelector('.tip1').style.color = "rgba(128, 128, 128, 0.192)";
+            document.querySelector('.tip3').style.color = "rgba(128, 128, 128, 0.192)";
+        }
+        function alterarDiv3(){
+            document.getElementById('divCifras').style.display = "none";
+            document.getElementById('divInfo').style.display = "none";
+            document.querySelector('.tip3').style.color = "black";
+            document.querySelector('.tip2').style.color = "rgba(128, 128, 128, 0.192)";
+            document.querySelector('.tip1').style.color = "rgba(128, 128, 128, 0.192)";
+        }
+    </script>
+</body>
+</html>

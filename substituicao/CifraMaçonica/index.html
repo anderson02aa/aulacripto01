@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra Maçonica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="cabecario">
+        <h1>Cifra Maçonica</h1>
+    </header>
+    <div style="padding: 10px; background-color: #dccca3; height: 40px;">
+        <p style="text-align: center; font-size: larger;">Cifra de substituição</p>
+    </div>
+    <br>
+    <br>
+    <div id="conteudo_principal">
+        <div>
+            <h3 style="text-align: center;">Criptografar</h3>
+            <section id="teclado_normal">
+                <button onclick="letraA()">A</button> <button onclick="letraB()">B</button> <button onclick="letraC()">C</button> <button onclick="letraD()">D</button>
+                <button onclick="letraE()">E</button> <button onclick="letraF()">F</button> <button onclick="letraG()">G</button> <button onclick="letraH()">H</button>
+                <button onclick="letrai()">I</button> <button onclick="letraJ()">J</button> <button onclick="letraK()">K</button> <button onclick="letraL()">L</button>
+                <button onclick="letraM()">M</button> <button onclick="letraN()">N</button> <button onclick="letraO()">O</button> <button onclick="letraP()">P</button>
+                <button onclick="letraQ()">Q</button> <button onclick="letraR()">R</button> <button onclick="letraS()">S</button> <button onclick="letraT()">T</button>
+                <button onclick="letraU()">U</button> <button onclick="letraV()">V</button> <button onclick="letraW()">W</button> <button onclick="letraX()">X</button>
+                <button onclick="letraY()">Y</button> <button onclick="letraZ()">Z</button> <button id="limpar" onclick="limpar()">Limpar</button>
+            </section>
+            <h3 style="text-align: center;">Resultado</h3>
+            <section id="res">
+
+            </section>
+        </div>
+        <div style="margin-top: 45px;">
+            <h3 style="text-align: center;">Decriptografar</h3>
+            <section id="teclado_criptografado">
+                <button onclick="lA()"><img src="imagens/LetraA.gif" alt=""></button> <button onclick="lB()"> <img src="imagens/LetraB.gif" alt=""></button> <button onclick="lC()"><img src="imagens/LetraC.gif" alt=""></button> <button onclick="lD()"><img src="imagens/LetraD.gif" alt=""></button>
+                <button onclick="lE()"><img src="imagens/LetraE.gif" alt=""></button> <button onclick="lF()"><img src="imagens/LetraF.gif" alt=""></button> <button onclick="lG()"><img src="imagens/LetraG.gif" alt=""></button> <button onclick="lH()"><img src="imagens/LetraH.gif" alt=""></button>
+                <button onclick="li()"><img src="imagens/Letrai.gif" alt=""></button> <button onclick="lJ()"><img src="imagens/LetraJ.gif" alt=""></button> <button onclick="lK()"><img src="imagens/LetraK.gif" alt=""></button> <button onclick="lL()"><img src="imagens/LetraL.gif" alt=""></button>
+                <button onclick="lM()"><img src="imagens/LetraM.gif" alt=""></button> <button onclick="lN()"><img src="imagens/LetraN.gif" alt=""></button> <button onclick="lO()"><img src="imagens/LetraO.gif" alt=""></button> <button onclick="lP()"><img src="imagens/LetraP.gif" alt=""></button>
+                <button onclick="lQ()"><img src="imagens/LetraQ.gif" alt=""></button> <button onclick="lR()"><img src="imagens/LetraR.gif" alt=""></button> <button onclick="lS()"><img src="imagens/LetraS.gif" alt=""></button> <button onclick="lT()"><img src="imagens/LetraT.gif" alt=""></button>
+                <button onclick="lU()"><img src="imagens/LetraU.gif" alt=""></button> <button onclick="lV()"><img src="imagens/LetraV.gif" alt=""></button> <button onclick="lW()"><img src="imagens/LetraW.gif" alt=""></button> <button onclick="lX()"><img src="imagens/LetraX.gif" alt=""></button>
+                <button onclick="lY()"><img src="imagens/LetraY.gif" alt=""></button> <button onclick="lZ()"><img src="imagens/LetraZ.gif" alt=""></button> <button id="limpar" onclick="limpar2()">Limpar</button>
+            </section>
+            <h3 style="text-align: center;">Resultado</h3>
+            <section id="res2" style="color: black; padding: 10px;">
+
+            </section>
+        </div>
+    </div>
+    <footer style="margin-top: 45px; margin-bottom: 45px;">
+        <p style="text-align: center; font-size: 15pt;">@RubemCorrêa</p>
+    </footer>
+    <script src="cifra.js"></script>
+</body>
+</html>

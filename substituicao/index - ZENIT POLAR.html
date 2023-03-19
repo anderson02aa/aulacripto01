@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenit Polar</title>
+    <style>
+        body{
+            background-color: rgb(43, 35, 35);
+            color: black;
+        }
+        div{
+            display: inline-block;
+            padding: 5px;
+            margin-left: 75px;
+            
+        }
+        section{
+            background-color: white;
+            width: 950px;
+            height: 300px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 18px;
+            margin-top: 12px;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border-radius: 18px;
+        }
+        .atencao{
+            background-color: white;
+            width: 950px;
+            height: 50px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 18px;
+        }
+        </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: rgb(170, 168, 168);">ZENIT POLAR</h1>  
+    <section class="atencao">
+        <h3 style="text-align: center;">Atenção! O alfabeto disponível nessa cifra encontra-se entre (Z E N I T P O L A R) e (z e n i t p o l a r). Qualquer caractere fora esses serão desconsiderados.</h3>
+    </section>  
+    <section>
+        <div>
+            <h2>Escreva aqui</h2>
+            <textarea name="" id="txt1" cols="30" rows="10" style="resize: none;" onkeyup="codificar()"></textarea>
+       </div>
+       <div>
+           <button onclick="codificar()">Codificar</button>
+       </div>
+       <div>
+           <h2>Resultado</h2>
+           <textarea name="" id="txt2" cols="30" rows="10" style="resize: none;"></textarea>
+       </div>
+    </section>
+    <section>
+        <div>
+            <h2>Escreva aqui</h2>
+            <textarea name="" id="txt3" cols="30" rows="10" style="resize: none;" onkeyup="decodificar()"></textarea>
+       </div>
+       <div>
+           <button onclick="decodificar()">Decodificar</button>
+       </div>
+       <div>
+           <h2>Resultado</h2>
+           <textarea name="" id="txt4" cols="30" rows="10" style="resize: none;"></textarea>
+       </div>
+    </section>
+    <footer>
+        <p style="text-align: center; color: white;">@RubemCorrêa</p>
+    </footer>
+    <script>
+        function codificar(){
+            var alfa = ["z","e","n","i","t","p","o","l","a","r"];
+            var alfa_minusculo = ["Z","E","N","I","T","P","O","L","A","R"]
+            var frase = document.getElementById("txt1").value;
+            var frase1 = [];
+
+            for (var i = 0; i < frase.length; i++)
+            {
+            if(frase[i] != ' ')
+            {
+            for (var j = 0; j < alfa.length; j++)
+            {
+                if (frase[i] == alfa[j])
+                {
+                    if((j+6) > alfa.length){
+                        frase1[i] = alfa[j+5 - alfa.length];
+                    }
+                    else{
+                        frase1[i] = alfa[j+5];
+                    }
+                break;
+                }
+                else if (frase[i] == alfa_minusculo[j]){
+                    if ((j+6) > alfa_minusculo.length){
+                       frase1[i] = alfa_minusculo[j+5 - alfa_minusculo.length];
+                    }
+                    else{
+                        frase1[i] = alfa_minusculo[j+5];
+                    }
+                break;    
+                }
+                else if (frase[i] != alfa[j] && frase[i] != alfa_minusculo[j]){
+                    frase1[i] = frase[i];
+                }
+            }
+            }
+            else
+            {
+            frase1[i] = ' ';
+            }
+            }
+document.getElementById("txt2").innerHTML = frase1.join("");
+        }
+        function decodificar(){
+            var alfa = ["z","e","n","i","t","p","o","l","a","r"];
+            var alfa_minusculo = ["Z","E","N","I","T","P","O","L","A","R"];
+            var frase = document.getElementById("txt3").value;
+            var frase1 = [];
+
+            for (var i = 0; i < frase.length; i++)
+            {
+            if(frase[i] != ' ')
+            {
+            for (var j = 0; j < alfa.length; j++)
+            {
+                if (frase[i] == alfa[j])
+                {
+                    if((j+6) > alfa.length){
+                        frase1[i] = alfa[j+5 - alfa.length];
+                    }
+                    else{
+                        frase1[i] = alfa[j+5];
+                    }
+                break;
+                }
+                else if (frase[i] == alfa_minusculo[j]){
+                    if ((j+6) > alfa_minusculo.length){
+                       frase1[i] = alfa_minusculo[j+5 - alfa_minusculo.length];
+                    }
+                    else{
+                        frase1[i] = alfa_minusculo[j+5];
+                    }
+                break;    
+                }
+                else if (frase[i] != alfa[j] && frase[i] != alfa_minusculo[j]){
+                    frase1[i] = frase[i];
+                }
+            }
+            }
+            else
+            {
+            frase1[i] = ' ';
+            }
+            }
+document.getElementById("txt4").innerHTML = frase1.join("");
+        }
+    </script>
+</body>
+</html>

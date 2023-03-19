@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kama Sutra</title>
+    <style>
+        header{
+            background-color: rgb(46, 34, 34);
+            padding: 10px;
+        }
+        section{
+            background-color: rgb(92, 92, 92);
+        }
+        .bloco{
+            position: flex;
+            display: inline-block;
+        }
+        .campo{
+            margin-top: -20px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; color: rgb(182, 176, 176); font-family: Arial, Helvetica, sans-serif;">KAMA SUTRA</h1>
+    </header>
+    <section>
+        <div class="bloco" style="margin-left: 180px; background-color: gray; border-radius: 80%;">
+            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Critptografar</h2>
+            <textarea name="" id="txt1" cols="30" rows="10" style="resize: none;" onkeyup="criptar()"></textarea>
+        </div>
+        <div class="bloco" style="margin-left: 380px; background-color: gray; border-radius: 80%;">
+            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Resultado</h2>
+            <textarea name="" id="txt2" cols="30" rows="10" style="resize: none;"></textarea>
+        </div>
+    </section>
+    <section>
+        <div class="bloco" style="margin-left: 180px; background-color: gray; border-radius: 80%;">
+            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Decifrar</h2>
+            <textarea name="" id="txt3" cols="30" rows="10" style="resize: none;" onkeyup="decifrar()"></textarea>
+        </div>
+        <div class="bloco" style="margin-left: 380px; background-color: gray; border-radius: 80%;">
+            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Resultado</h2>
+            <textarea name="" id="txt4" cols="30" rows="10" style="resize: none;"></textarea>
+        </div>
+    </section>
+   <section class="campo">
+       <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center; margin-bottom: 10px;">Como funciona? </h3>
+       <div style="text-align: center;;">
+           <img src="kamasutraimg.PNG" alt="" style="border-radius: 30%;">
+       </div>
+   </section>
+   <footer>
+       <p style="text-align: center; font-size: larger; color: black;">@RubemCorrêa</p>
+   </footer>
+   <script>
+
+       var alfabeto =     "ADHIKMORSUWYZVXBGJCQLNEFPT"
+       var alfabeto_min = "adhikmorsuwyzvxbgjcqlnefpt";
+       var alfakama =     "VXBGJCQLNEFPTADHIKMORSUWYZ"
+       var alfakama_min = "vxbgjcqlnefptadhikmorsuwyz";
+
+       function criptar(){
+            var txt = document.getElementById('txt1').value;
+            var pos = 0;
+            var result = "";
+            var i = 0;
+            for (letra of txt){
+
+                if (txt.charCodeAt(i)>= 65 && txt.charCodeAt(i)<=90){ //Verificar se as letras sao maiusculas
+                    pos = alfabeto.indexOf(letra);
+                    result += alfakama[pos];
+                }else if(txt.charCodeAt(i)>=97 && txt.charCodeAt(i)<=122){ //Verificar se as letras sao minusculas
+                    pos = alfabeto_min.indexOf(letra);
+                    result += alfakama_min[pos];
+                }else{
+                    result += letra;
+                }
+                
+                i++;
+            }
+            document.getElementById("txt2").innerHTML = result;
+       }
+       function decifrar(){
+            var txt = document.getElementById('txt3').value;
+            var pos = 0;
+            var result = "";
+            var i = 0;
+            for (letra of txt){
+
+                if (txt.charCodeAt(i)>= 65 && txt.charCodeAt(i)<=90){ //Verificar se as letras sao maiusculas
+                    pos = alfabeto.indexOf(letra);
+                    result += alfakama[pos];
+                }else if(txt.charCodeAt(i)>=97 && txt.charCodeAt(i)<=122){ //Verificar se as letras sao minusculas
+                    pos = alfabeto_min.indexOf(letra);
+                    result += alfakama_min[pos];
+                }else{
+                    result += letra;
+                }
+                
+                i++;
+            }
+            document.getElementById("txt4").innerHTML = result;
+
+       }
+   </script>
+</body>
+</html>

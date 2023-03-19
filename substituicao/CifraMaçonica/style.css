@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: linear-gradient(to bottom,#252522 ,#824C71 );
+    color: white;
+    background-attachment: fixed;
+}
+#cabecario{
+    background-color: #252522;
+    height: 80px;
+    padding: 20px;
+}
+#cabecario h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: white;
+
+}
+#conteudo_principal{
+    padding: 10px;
+    border-radius: 8%;
+    background-color: #90aa86;
+    width: 1000px;
+    height: 900px;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 3px black;
+}
+#conteudo_principal h3{
+    font-size: 20pt;
+}
+#teclado_normal{
+    text-align: center;
+    width: 790px;
+    height: 100px;
+    background-color: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+button{
+    width: 50px;
+    height: 50px;
+}
+#res, #res2{
+    width: 720px;
+    height: 100px;
+    background-color: white;
+    margin: auto;
+    margin-top: 45px;
+    border-radius: 15px;
+}
+
+#teclado_criptografado{
+    text-align: center;
+    width: 790px;
+    height: 110px;
+    background-color: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}

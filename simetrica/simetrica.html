@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Simétrica</title>
+</head>
+<body>
+    <!-- <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">HASH</h3>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="/index.html">Home</a>
+              <a class="nav-link" href="#" onclick="ativarDivInfo()">Informações</a>
+              <a class="nav-link" href="#" onclick="ativarDivCripto()">Criptografia</a>
+            </nav>
+          </div> -->
+    <header class="bg-primary text-white p-3">
+        <div class="px-4 py-5 my-5 text-center">
+            <nav class="nav nav-masthead justify-content-lg-start">
+                <a href="../index.html" class="nav-link text-secondary text-white">
+                    <img class="bi d-block mx-auto mb-1" width="24" src="house-door.svg" height="24">
+                    Home
+                  </a>
+            </nav>
+            <img class="d-block mx-auto mb-4" src="key.svg" alt="" width="72" height="57">
+            <h1 class="display-5 fw-bold">Simétrica</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">São algoritmos para criptografia que usam a mesma chave criptográfica para encriptação de texto puro e decriptação de texto cifrado. A chave, na prática, representa um segredo compartilhado entre duas ou mais partes que pode ser usado para manter uma ligação de informação privada.</p>
+              
+            </div>
+          </div>
+    </header>
+  <div class="b-example-divider"></div>
+<div id="corpo" style=" padding: 40px; background-image: linear-gradient(135deg, #ff85d5 0, #ff7eda 12.5%, #ff76da 25%, #fe6dd4 37.5%, #d663c8 50%, #af59b9 62.5%, #8c51ab 75%, #6d4a9f 87.5%, #524594 100%);">
+    
+      <div class="container-fluid px-3 text-center">
+        <h1 class="display-5 fw-bold">Testar Criptografia..</h1>
+        <div class="col-lg-5 mx-auto">
+            <p class="lead mb-4">Insira um texto e uma chave para continuar.</p>
+          </div>
+      </div>
+    </div>
+        <section id="secao">
+                <div id="texto" class="bg-dark text-white">
+                    <label for="texto" class="p-3" style="font-size: 1.5rem;">Texto: </label>
+                    <textarea name="txt" class="txt" cols="30" rows="10" placeholder="Digite o seu texto..." style="resize: none;"></textarea>
+                </div>
+                <div id="chave" class="bg-dark text-white">
+                    <label for="chave" class="p-3" style="font-size: 1.5rem;">Chave: </label>
+                    <textarea name="txt" class="txt" cols="30" rows="10" placeholder="Digite a sua chave..." style="resize: none;"></textarea>
+                </div>
+        </section>
+    
+        <div id="btn" style="padding: 10px;">
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3 bg-dark" onclick="criptografar()" data-bs-toggle="modal" data-bs-target="#extraLargeModal">Enviar</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4 bg-dark" onclick="limpar1()"> Limpar</button>
+              </div>
+        </div>
+        <div class="m-4">
+            <!-- Extra Large modal -->
+        
+            <div id="extraLargeModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Resultado</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Dados:</h5>
+                            <p class="results"><b>Mensagem em Caractere:</b> </p>
+                            <p class="results"><b>Mensagem em Binário:</b></p>
+                            <br>
+                            <p class="results"><b>Chave em Caractere:</b></p>
+                            <p class="results"><b>Chave em Binário:</b></p>
+                            <hr>
+                            <h5>Resultado:</h5>
+                            <p class="results"><b>Resultado da codificação em Caractere:</b> xxx </p>
+                            <p class="results"><b>Resultado da codificação em Binário:</b> zzz</p>
+                            <p class="results"><b>Resultado da codificação em ASCII:</b> yyy</p>
+                            <hr>
+                            <h5>Decodificação</h5>
+                            <p>A decodificação é feita por meio da xor entre a chave em binário e o resultado da codificação em binário. O resultado será novamente o texto descrito. <br> <em>Exemplo:</em> </p>
+                            <img src="exemplo.png" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    <script>        
+        function limpar1(){
+            document.getElementsByClassName("txt")[0].value = "";
+            document.getElementsByClassName("txt")[1].value = "";
+        }
+        function criptografar(txt, chave){
+            txt = document.getElementsByClassName("txt")[0].value; txt = txt.toUpperCase();  txt = txt.trim();
+            chave = document.getElementsByClassName("txt")[1].value; chave = chave.toUpperCase(); chave = chave.trim();
+            var novChave = "";
+            var i = 0;
+            while (txt.length > novChave.length ){
+                if (i==chave.length){
+                    i=0;
+                }
+                novChave += chave[i]
+                console.log(i)
+                i++;    
+            }
+            
+            console.log("Essa é a chave "+novChave);
+            console.log("Esse é o texto "+ txt)
+            var txtBin = "";
+            var txtAscii = 0;
+            var chaveAscii = 0;
+            var chaveBin = "";
+            var txtBin1 = "";
+            var txtAscii1 = 0;
+            var chaveAscii1 = 0;
+            var chaveBin1 = "";
+            var resString = ""
+            var resAscii = ""
+            var resAsciiEsp = ""
+            var resBin = ""
+            var resBincomesp = ""
+            var resetResBin = ""
+            for (var i = 0; i < novChave.length; i++){
+                console.log("Acima do I " +txt[i])
+                txtAscii = txt[i].charCodeAt(); //Transformar texto em ascii
+                chaveAscii = novChave[i].charCodeAt(); //Transformando chave em ascii
+                txtBin = txtAscii.toString(2); //Transformando texto em Binario
+                chaveBin = chaveAscii.toString(2); // Transformando chave em binario
+
+                txtAscii1 += txt[i].charCodeAt()+ ""; //Transformar texto em ascii
+                chaveAscii1 += novChave[i].charCodeAt()+""; //Transformando chave em ascii
+                txtBin1 += txtAscii.toString(2)+""; //Transformando texto em Binario
+                chaveBin1 += chaveAscii.toString(2)+""; // Transformando chave em binario
+                //Entrar no loop para fazer o XOR de APENAS uma Letra
+                console.log("Ascii da chave: "+chaveAscii)
+                console.log("Ascii do textox: "+txtAscii)
+                console.log('Binario da chave: '+chaveBin)
+                console.log("Binario do texto: "+txtBin)
+                //CRIPTOGRAFAR
+                for (var j = 0; j < chaveBin.length; j++) {
+                    resBin += ""+chaveBin[j]^txtBin[j]; //Fazendo XOR com binario de txt e chave
+                    resBincomesp += ""+chaveBin[j]^txtBin[j];
+                    resetResBin += ""+chaveBin[j]^txtBin[j];
+                    console.log("Dentro do for J "+resBin)
+                    }
+                    //Aqui termina uma letra
+                    resBincomesp += ' '
+                    console.log('')
+                    //Transformar a resposta binaria em ascii
+                        resAscii += ""+parseInt(resetResBin, 2)
+                        resAsciiEsp += ""+parseInt(resetResBin, 2)
+                        console.log("A STRINGGG EM ASCIII  "+ resAscii)
+                        console.log("")
+                    //Transformar a resposta ascii em caractere
+                        resString += String.fromCharCode(parseInt(resetResBin, 2))
+                        console.log("A STRINGGGG ESCRITAAAA "+ resString)
+                    console.log("")
+                    console.log("Dentro do for I "+resBin)
+                    resAsciiEsp += " "
+                    resetResBin = ""
+                }
+                document.getElementsByClassName('results')[0].innerHTML= "<b>Mensagem em Caractere:</b> " +txt;
+                document.getElementsByClassName('results')[1].innerHTML = "<b>Mensagem em Binário:</b> " +txtBin1;
+                document.getElementsByClassName('results')[2].innerHTML = "<b>Chave em Caractere:</b> " +chave;
+                document.getElementsByClassName('results')[3].innerHTML = "<b>Chave em Binário:</b> "+chaveBin1;
+                document.getElementsByClassName('results')[4].innerHTML = "<b>Resultado da codificação em Caractere:</b> " +resString;
+                document.getElementsByClassName('results')[5].innerHTML = "<b>Resultado da codificação em Binário:</b> " +resBincomesp;
+                document.getElementsByClassName('results')[6].innerHTML = "<b>Resultado da codificação em ASCII:</b> " +resAsciiEsp;
+                console.log("A resposta em binario é "+ resBin)
+                console.log("A resposta em binario com espaço "+ resBincomesp)
+                console.log("Resposta em Ascii com espaço "+ resAsciiEsp)
+            }
+        //criptografar();
+        //num.toString(2) transforma em base 2
+        //parseInt(num, 2) transforma em decimal
+    </script>
+</body>
+</html>

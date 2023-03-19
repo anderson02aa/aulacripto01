@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #413b6b;
+}
+header{
+    width: 100%;
+    background-color: #1c0b2b;
+    color:  white;
+    display: flex;
+    padding: 10px;
+}
+.logo_img{
+    display: block;
+    margin-right: 20px;
+    margin-left: 40px;   
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+.logo_img img{
+    height: 50px;
+}
+#contra_cab{
+    width: 100%;
+    background-color: #6f95ff;
+    color: #1c0b2b;
+}
+main{
+    display: inline-block;
+}
+main div{
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+}
+#div_dir{
+    width: 48%;
+    background-color: #1c0b2b;
+    margin: 10px;
+}
+.titu2{
+    background-color: #1c0b2b;
+    color: white;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 10px;
+    text-align: justify;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.titu2 p{
+    margin-top: 10px;
+}
+#div_lef{
+    width: 47%;
+    margin: 10px;
+    padding-bottom: 50px;
+}
+.titu{
+    background-color: #5c65c0;
+    display: block;
+    border-style: solid;
+    border-color: black;
+}
+#div_lef h2{
+    background-color: #5c65c0;
+}
+.cards{
+    border-style: solid;
+    display: inline-block;
+    background-color: #1c0b2b;
+    width: 180px;
+    height: 160px;
+    margin-top: 28px;
+    margin-right: 10px;
+    margin-left: 12px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cards h4{
+    margin-top: 40px;
+}
+.cards:hover{
+    background-color: white;
+    color: black;
+}
+footer{
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    vertical-align: bottom;
+}
