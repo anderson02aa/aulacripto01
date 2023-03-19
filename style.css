@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 body{
     background-color: #F5FFFA;
 }
+
+
 header{
     width: 100%;
     background-color: #1c0b2b;
